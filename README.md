@@ -13,7 +13,7 @@ We are **Bappa Warrior**, a team of 4 passionate developers and designers from P
 |---|------|------|--------|
 | 1 | **Yash Golde** | 🧑‍💻 Team Leader & Frontend Developer | [@yashgolde151](https://github.com/yashgolde151) |
 | 2 | **Kaushik Bhad** | 🎨 UI/UX Designer | [@kaushikbhad2](https://github.com/kaushikbhad2) |
-| 3 | **Sanjay Jadhav** | ⚙️ Backend Developer | [@sanjayjadhav123566](https://github.com/sanjayjadhav123566) |
+| 3 | **Sanjay Jadhav** | ⚙️ Backend Developer | [@sanjay123566](https://github.com/sanjay123566) |
 | 4 | **Sanchita Yashwantrao** | 🧪 QA Tester & Presenter | [@Sanchita6979](https://github.com/Sanchita6979) |
 
 ---
