@@ -25,7 +25,12 @@ We are **Bappa Warrior**, a team of 4 passionate developers and designers from P
 <!-- Once decided, fill in the sections below -->
 
 ### 🔍 Problem Statement
-_To be updated..._
+Design and develop a complete travel planning application where users can:
+Create customized multi-city itineraries
+Assign travel dates, activities, and budgets
+Discover activities and destinations through search
+Receive cost breakdowns and visual calendars
+Share their plans publicly or with friends
 
 ### 🛠️ Our Solution
 _To be updated..._
