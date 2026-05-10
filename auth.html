@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveloop - Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="landing.css?v=2">
+    <link rel="stylesheet" href="auth.css?v=2">
+</head>
+<body>
+    <!-- Navigation Bar (Reused from landing page) -->
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z" fill="currentColor" stroke="none" />
+                </svg>
+                <span>Traveloop</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#">Packages</a>
+            </nav>
+        </div>
+        
+        <div class="nav-right">
+            <div class="search-box">
+                <input type="text" placeholder="Search packages...">
+                <button class="search-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+            <a href="auth.html" class="login-link">Login</a>
+            <a href="auth.html" class="btn signup-btn">Sign Up</a>
+            <button class="settings-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Auth Section with Daisy Background -->
+    <main class="auth-wrapper">
+        <div class="glass-card hidden" id="register-card">
+            <h2>Register</h2>
+            <form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="reg-name">Full Name</label>
+                        <input type="text" id="reg-name" placeholder="Prasad PatiL" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="reg-phone">Phone</label>
+                        <input type="tel" id="reg-phone" placeholder="9322581165" required>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="reg-email">Email Address</label>
+                    <input type="email" id="reg-email" placeholder="patilprasad6012@gmail.com" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="reg-pass">Password</label>
+                        <input type="password" id="reg-pass" placeholder="••••••••" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="reg-confirm">Confirm</label>
+                        <input type="password" id="reg-confirm" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="auth-submit">Create Account</button>
+
+                <p class="auth-footer">Already have an account? <a href="#" id="show-login">Login</a></p>
+            </form>
+        </div>
+
+        <!-- Login Card (Hidden by default, shown via JS) -->
+        <div class="glass-card" id="login-card">
+            <h2>Login</h2>
+            <form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+                <div class="input-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" placeholder="johndoe@example.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="login-pass">Password</label>
+                    <input type="password" id="login-pass" placeholder="••••••••" required>
+                </div>
+
+                <div style="text-align: right; margin-bottom: 20px;">
+                    <a href="#" style="color: rgba(255, 255, 255, 0.8); font-size: 13px; font-weight: 500; text-decoration: underline;">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="auth-submit">Login</button>
+
+                <p class="auth-footer">Don't have an account? <a href="#" id="show-register">Register</a></p>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        // Simple script to toggle between Login and Register
+        document.getElementById('show-login').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('register-card').classList.add('hidden');
+            document.getElementById('login-card').classList.remove('hidden');
+        });
+
+        document.getElementById('show-register').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('login-card').classList.add('hidden');
+            document.getElementById('register-card').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
