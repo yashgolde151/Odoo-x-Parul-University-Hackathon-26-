@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Traveloop</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="user.js"></script>
+    <style>
+        .profile-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .profile-header-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            border: 1px solid var(--slate-100);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .profile-avatar-edit {
+            position: relative;
+            width: 150px;
+            height: 150px;
+        }
+
+        .profile-avatar-edit .avatar-circle {
+            width: 100%;
+            height: 100%;
+            font-size: 48px;
+            cursor: pointer;
+        }
+
+        .avatar-upload-overlay {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            border: 3px solid white;
+            transition: var(--transition);
+        }
+
+        .avatar-upload-overlay:hover {
+            transform: scale(1.1);
+        }
+
+        .profile-info-header h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-bottom: 8px;
+        }
+
+        .profile-info-header p {
+            color: var(--slate-500);
+            font-size: 16px;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .edit-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 30px;
+            border: 1px solid var(--slate-100);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--slate-800);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--slate-600);
+            margin-bottom: 8px;
+        }
+
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--slate-200);
+            font-size: 15px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .input-group input:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+        }
+
+        .save-btn {
+            background: var(--primary);
+            color: white;
+            padding: 14px 40px;
+            border-radius: 14px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .save-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(14, 165, 233, 0.2);
+        }
+
+        .stats-card {
+            background: var(--slate-900);
+            color: white;
+            border-radius: 24px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--slate-400);
+        }
+
+        .stat-value {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .profile-header-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z" fill="currentColor" stroke="none" />
+                </svg>
+                <span>travel<span style="color: #0ea5e9">oop</span></span>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item">
+                    <span>🏠</span> Dashboard
+                </a>
+                <a href="profile.html" class="nav-item active">
+                    <span>👤</span> Profile
+                </a>
+                <a href="my-trips.html" class="nav-item">
+                    <span>🗺️</span> My Trips
+                </a>
+                <a href="explore.html" class="nav-item">
+                    <span>🔍</span> Explore Cities
+                </a>
+                <a href="budget.html" class="nav-item">
+                    <span>💰</span> Budget
+                </a>
+                <a href="Packingchecklistscreen.html" class="nav-item">
+                    <span>📋</span> Packing List
+                </a>
+                <a href="Activitysearch.html" class="nav-item">
+                    <span>🎭</span> Activities
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile-small">
+                    <div class="avatar-circle">AS</div>
+                    <div class="user-info-text">
+                        <h4>Aryan Sharma</h4>
+                        <a href="#" class="logout-link">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle" id="menu-toggle">☰</button>
+                    <h2 class="page-title">Profile Settings</h2>
+                </div>
+                <div class="header-actions">
+                    <div class="avatar-circle">AS</div>
+                </div>
+            </header>
+
+            <div class="profile-container animate-fade-in">
+                <!-- Profile Header -->
+                <div class="profile-header-card">
+                    <div class="profile-avatar-edit">
+                        <div class="avatar-circle" id="profile-avatar-main">AS</div>
+                        <label for="avatar-input" class="avatar-upload-overlay">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                <circle cx="12" cy="13" r="4"></circle>
+                            </svg>
+                        </label>
+                        <input type="file" id="avatar-input" hidden accept="image/*">
+                    </div>
+                    <div class="profile-info-header">
+                        <h2 class="profile-name-display">Aryan Sharma</h2>
+                        <p id="profile-location-display">Mumbai, India</p>
+                    </div>
+                </div>
+
+                <div class="profile-grid">
+                    <!-- Edit Form -->
+                    <div class="edit-card">
+                        <form id="profile-form">
+                            <div class="form-section">
+                                <h3>Basic Information</h3>
+                                <div class="form-grid">
+                                    <div class="input-group">
+                                        <label>Full Name</label>
+                                        <input type="text" id="input-name" placeholder="Aryan Sharma">
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Email Address</label>
+                                        <input type="email" id="input-email" placeholder="aryan@example.com" disabled>
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Phone Number</label>
+                                        <input type="tel" id="input-phone" placeholder="+91 93225 81165">
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Location</label>
+                                        <input type="text" id="input-location" placeholder="Mumbai, India">
+                                    </div>
+                                    <div class="input-group full-width">
+                                        <label>Bio</label>
+                                        <textarea id="input-bio" rows="4" placeholder="Tell us about your travel style..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="save-btn shimmer-sweep">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <!-- Sidebar Stats -->
+                    <div class="stats-card">
+                        <h3>Trip Statistics</h3>
+                        <div class="stat-item">
+                            <span class="stat-label">Trips Completed</span>
+                            <span class="stat-value">12</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Countries Visited</span>
+                            <span class="stat-value">8</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Total Miles</span>
+                            <span class="stat-value">24,500</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Traveler Level</span>
+                            <span class="stat-value" style="color: var(--primary)">Expert 💎</span>
+                        </div>
+                        
+                        <div style="margin-top: 20px;">
+                            <h4 style="font-size: 14px; margin-bottom: 15px; color: var(--slate-400);">Linked Accounts</h4>
+                            <div style="display: flex; gap: 10px;">
+                                <div style="width: 35px; height: 35px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center;">G</div>
+                                <div style="width: 35px; height: 35px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center;">F</div>
+                                <div style="width: 35px; height: 35px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center;">T</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = UserProfile.get();
+            if (user) {
+                document.getElementById('input-name').value = user.name || '';
+                document.getElementById('input-email').value = user.email || '';
+                document.getElementById('input-phone').value = user.phone || '';
+                document.getElementById('input-location').value = user.location || '';
+                document.getElementById('input-bio').value = user.bio || '';
+            }
+
+            // Handle Photo Upload
+            const avatarInput = document.getElementById('avatar-input');
+            avatarInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        const base64Image = event.target.result;
+                        UserProfile.saveProfile({ profilePhoto: base64Image });
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Handle Form Submission
+            document.getElementById('profile-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const updatedData = {
+                    name: document.getElementById('input-name').value,
+                    phone: document.getElementById('input-phone').value,
+                    location: document.getElementById('input-location').value,
+                    bio: document.getElementById('input-bio').value
+                };
+                UserProfile.saveProfile(updatedData);
+                alert('Profile updated successfully!');
+            });
+            
+            // Sidebar toggle logic (from dashboard)
+            const menuToggle = document.getElementById('menu-toggle');
+            const sidebar = document.getElementById('sidebar');
+            menuToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>

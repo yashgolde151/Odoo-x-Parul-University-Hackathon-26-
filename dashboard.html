@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Traveloop</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="user.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z" fill="currentColor" stroke="none" />
+                </svg>
+                <span>travel<span style="color: #0ea5e9">oop</span></span>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-item active">
+                    <span>🏠</span> Dashboard
+                </a>
+                <a href="profile.html" class="nav-item">
+                    <span>👤</span> Profile
+                </a>
+                <a href="my-trips.html" class="nav-item">
+                    <span>🗺️</span> My Trips
+                </a>
+                <a href="explore.html" class="nav-item">
+                    <span>🔍</span> Explore Cities
+                </a>
+                <a href="budget.html" class="nav-item">
+                    <span>💰</span> Budget
+                </a>
+                <a href="Packingchecklistscreen.html" class="nav-item">
+                    <span>📋</span> Packing List
+                </a>
+                <a href="Activitysearch.html" class="nav-item">
+                    <span>🎭</span> Activities
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile-small">
+                    <div class="avatar-circle">AS</div>
+                    <div class="user-info-text">
+                        <h4>Aryan Sharma</h4>
+                        <a href="auth.html" class="logout-link">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                    <h2 class="page-title">Dashboard</h2>
+                </div>
+                
+                <div class="search-bar-container">
+                    <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" class="search-bar" placeholder="Search destinations, trips...">
+                </div>
+
+                <div class="header-actions">
+                    <button class="notif-btn">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                    </button>
+                    <div class="avatar-circle">AS</div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-sections">
+                
+                <!-- Section 1: Welcome Banner -->
+                <section class="welcome-banner animate-fade-in" style="animation-delay: 0.1s">
+                    <div class="welcome-text">
+                        <h1>👋 Welcome back, Aryan!</h1>
+                        <p>You have 2 upcoming trips. Keep exploring the world.</p>
+                    </div>
+                    <div class="banner-graphic">
+                        <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Cloud -->
+                            <path d="M160 60C160 51.7157 153.284 45 145 45C143.656 45 142.365 45.1774 141.14 45.5118C138.608 41.0772 133.882 38 128.5 38C121.737 38 116.143 42.827 115 49.1917C113.88 48.4239 112.521 48 111.062 48C107.714 48 105 50.6863 105 54C105 54.3468 105.029 54.6868 105.086 55.0175C102.164 56.4005 100 59.4533 100 63C100 67.9706 104.03 72 109 72H155C157.761 72 160 69.7614 160 67C160 66.8619 159.994 66.7252 159.983 66.59C162.915 65.2078 165 62.1157 165 58.5C165 53.8056 161.194 50 156.5 50C156.321 50 156.143 50.0055 155.967 50.0163C155.989 49.6823 156 49.3444 156 49C156 42.9249 151.075 38 145 38C140.672 38 136.947 40.4967 135.132 44.1353C133.09 41.597 129.988 40 126.5 40C120.701 40 116 44.701 116 50.5C116 50.8359 116.016 51.168 116.046 51.4952C114.793 50.5513 113.21 50 111.5 50C107.91 50 105 52.9101 105 56.5C105 56.6717 105.007 56.8418 105.02 57.0102C102.046 58.4682 100 61.4947 100 65C100 69.9706 104.03 74 109 74H155C158.314 74 161 71.3137 161 68C161 67.8631 160.995 67.7274 160.986 67.5932C163.355 66.1956 165 63.539 165 60.5C165 55.8056 161.194 52 156.5 52C156.321 52 156.143 52.0055 155.967 52.0163C155.989 51.6823 156 51.3444 156 51C156 44.9249 151.075 40 145 40C140.672 40 136.947 42.4967 135.132 46.1353C133.09 43.597 129.988 42 126.5 42C120.701 42 116 46.701 116 52.5" fill="var(--primary)" fill-opacity="0.2"/>
+                            <!-- Arc Path -->
+                            <path d="M40 80C60 40 140 40 160 80" stroke="var(--primary)" stroke-width="2" stroke-dasharray="4 4" />
+                            <!-- Plane -->
+                            <g transform="translate(155, 75) rotate(-30)">
+                                <path d="M12 2 11 13M12 2l-7 20-4-9-9-4 20-7z" fill="var(--primary)" />
+                            </g>
+                        </svg>
+                    </div>
+                </section>
+
+                <!-- Section 2: Smart Travel Suite -->
+                <section class="suite-section animate-fade-in" style="animation-delay: 0.2s">
+                    <div class="section-header">
+                        <h2>Your Smart Travel Suite</h2>
+                    </div>
+                    <div class="suite-grid">
+                        <a href="my-trips.html" class="suite-card">
+                            <div class="suite-icon" style="background: #e0f2fe; color: #0ea5e9;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <h3>Global Trips</h3>
+                            <p>Manage multi-city itineraries.</p>
+                        </a>
+                        <a href="explore.html" class="suite-card">
+                            <div class="suite-icon" style="background: #f0fdf4; color: #22c55e;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+                            </div>
+                            <h3>City Explorer</h3>
+                            <p>Discover hidden gems.</p>
+                        </a>
+                        <a href="budget.html" class="suite-card">
+                            <div class="suite-icon" style="background: #fefce8; color: #eab308;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"></path></svg>
+                            </div>
+                            <h3>Finance Navigator</h3>
+                            <p>AI spending insights.</p>
+                        </a>
+                        <a href="Packingchecklistscreen.html" class="suite-card">
+                            <div class="suite-icon" style="background: #faf5ff; color: #a855f7;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 13V8a2 2 0 00-2-2H5a2 2 0 00-2 2v5m18 0v6a2 2 0 00-2 2H5a2 2 0 00-2-2v-6m18 0V9a2 2 0 00-2-2h-2M5 13V9a2 2 0 012-2h2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v2m-6 0h6"></path></svg>
+                            </div>
+                            <h3>Packing Assistant</h3>
+                            <p>Weight-aware checklists.</p>
+                        </a>
+                        <a href="Activitysearch.html" class="suite-card">
+                            <div class="suite-icon" style="background: #fff1f2; color: #f43f5e;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            </div>
+                            <h3>Activity Finder</h3>
+                            <p>Book local experiences.</p>
+                        </a>
+                    </div>
+                </section>
+
+
+                <!-- Section 4: Budget Highlights -->
+                <section class="budget-highlights animate-fade-in" style="animation-delay: 0.4s">
+                    <div class="section-header">
+                        <h2>Budget Highlights</h2>
+                    </div>
+                    <div class="budget-grid">
+                        <div class="metric-card">
+                            <div class="metric-label">Total Budgeted</div>
+                            <div class="metric-value">₹<span class="count-up" data-target="120000">0</span></div>
+                            <div class="trend up">▲ 12% vs last month</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Total Spent</div>
+                            <div class="metric-value">₹<span class="count-up" data-target="38000">0</span></div>
+                            <div class="trend down">▼ 5% under target</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Remaining</div>
+                            <div class="metric-value" style="color: #10b981">₹<span class="count-up" data-target="82000">0</span></div>
+                            <div class="trend up">Available for next trip</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Over Budget Trips</div>
+                            <div class="metric-value" style="color: #10b981"><span class="count-up" data-target="0">0</span></div>
+                            <div class="trend up">Keep it up!</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 5: Recommended Destinations -->
+                <section class="recommended animate-fade-in" style="animation-delay: 0.5s">
+                    <div class="section-header">
+                        <h2>Explore Popular Destinations</h2>
+                        <a href="#" class="view-all-link">See all →</a>
+                    </div>
+                    <div class="destinations-grid">
+                        <!-- Dest 1 -->
+                        <div class="dest-card">
+                            <div class="dest-bg" style="background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent), url('https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=400&q=80'); background-size: cover;"></div>
+                            <div class="dest-content">
+                                <h3 class="dest-name">Kyoto</h3>
+                                <p class="dest-country">Japan</p>
+                                <div class="dest-tags">
+                                    <span class="dest-tag">🔥 Trending</span>
+                                    <span class="dest-tag">💎 Premium</span>
+                                </div>
+                            </div>
+                            <div class="add-trip-overlay">
+                                <span>+ Add to Trip</span>
+                            </div>
+                        </div>
+                        <!-- Dest 2 -->
+                        <div class="dest-card">
+                            <div class="dest-bg" style="background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent), url('https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=400&q=80'); background-size: cover;"></div>
+                            <div class="dest-content">
+                                <h3 class="dest-name">London</h3>
+                                <p class="dest-country">United Kingdom</p>
+                                <div class="dest-tags">
+                                    <span class="dest-tag">⭐ Top Rated</span>
+                                    <span class="dest-tag">💎 Premium</span>
+                                </div>
+                            </div>
+                            <div class="add-trip-overlay">
+                                <span>+ Add to Trip</span>
+                            </div>
+                        </div>
+                        <!-- Dest 3 -->
+                        <div class="dest-card">
+                            <div class="dest-bg" style="background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent), url('https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?auto=format&fit=crop&w=400&q=80'); background-size: cover;"></div>
+                            <div class="dest-content">
+                                <h3 class="dest-name">Bali</h3>
+                                <p class="dest-country">Indonesia</p>
+                                <div class="dest-tags">
+                                    <span class="dest-tag">🔥 Trending</span>
+                                    <span class="dest-tag">💰 Budget-friendly</span>
+                                </div>
+                            </div>
+                            <div class="add-trip-overlay">
+                                <span>+ Add to Trip</span>
+                            </div>
+                        </div>
+                        <!-- Dest 4 -->
+                        <div class="dest-card">
+                            <div class="dest-bg" style="background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent), url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=400&q=80'); background-size: cover;"></div>
+                            <div class="dest-content">
+                                <h3 class="dest-name">Paris</h3>
+                                <p class="dest-country">France</p>
+                                <div class="dest-tags">
+                                    <span class="dest-tag">⭐ Top Rated</span>
+                                    <span class="dest-tag">💎 Premium</span>
+                                </div>
+                            </div>
+                            <div class="add-trip-overlay">
+                                <span>+ Add to Trip</span>
+                            </div>
+                        </div>
+                        <!-- Dest 5 -->
+                        <div class="dest-card">
+                            <div class="dest-bg" style="background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent), url('https://images.unsplash.com/photo-1512100356956-c1227cabc2a9?auto=format&fit=crop&w=400&q=80'); background-size: cover;"></div>
+                            <div class="dest-content">
+                                <h3 class="dest-name">Maldives</h3>
+                                <p class="dest-country">South Asia</p>
+                                <div class="dest-tags">
+                                    <span class="dest-tag">🔥 Trending</span>
+                                    <span class="dest-tag">💎 Premium</span>
+                                </div>
+                            </div>
+                            <div class="add-trip-overlay">
+                                <span>+ Add to Trip</span>
+                            </div>
+                        </div>
+                        <!-- Dest 6 -->
+                        <div class="dest-card">
+                            <div class="dest-bg" style="background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent), url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&q=80'); background-size: cover;"></div>
+                            <div class="dest-content">
+                                <h3 class="dest-name">Goa</h3>
+                                <p class="dest-country">India</p>
+                                <div class="dest-tags">
+                                    <span class="dest-tag">⭐ Top Rated</span>
+                                    <span class="dest-tag">💰 Budget-friendly</span>
+                                </div>
+                            </div>
+                            <div class="add-trip-overlay">
+                                <span>+ Add to Trip</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 6: Recent Activity -->
+                <section class="activity-section animate-fade-in" style="animation-delay: 0.6s">
+                    <div class="section-header">
+                        <h2>Recent Activity</h2>
+                    </div>
+                    <div class="activity-feed">
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">✅</div>
+                                <div class="activity-text">
+                                    <p>Added Tokyo to Japan trip</p>
+                                    <span>2h ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">📝</div>
+                                <div class="activity-text">
+                                    <p>Updated budget for Europe trip</p>
+                                    <span>Yesterday</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">🔗</div>
+                                <div class="activity-text">
+                                    <p>Shared Japan itinerary</p>
+                                    <span>2 days ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">➕</div>
+                                <div class="activity-text">
+                                    <p>Created new trip: Bali Escape</p>
+                                    <span>3 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Count-up animation
+        const countUp = (el) => {
+            const target = parseInt(el.getAttribute('data-target'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const updateCount = () => {
+                current += increment;
+                if (current < target) {
+                    el.textContent = Math.floor(current).toLocaleString();
+                    requestAnimationFrame(updateCount);
+                } else {
+                    el.textContent = target.toLocaleString();
+                }
+            };
+            updateCount();
+        };
+
+        // Initialize animations and sidebar logic
+        window.addEventListener('DOMContentLoaded', () => {
+            // Start count-up for all metric values
+            document.querySelectorAll('.count-up').forEach(countUp);
+
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const menuToggle = document.getElementById('menu-toggle');
+
+            const toggleSidebar = () => {
+                sidebar.classList.toggle('open');
+                overlay.classList.toggle('show');
+                document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+            };
+
+            menuToggle.addEventListener('click', toggleSidebar);
+            overlay.addEventListener('click', toggleSidebar);
+
+            // Add active state functionality to sidebar and close on mobile
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    navItems.forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+                    
+                    // Close sidebar on mobile after clicking an item
+                    if (window.innerWidth <= 768) {
+                        toggleSidebar();
+                    }
+                });
+            });
+
+            // Add click effects to all buttons
+            document.querySelectorAll('button, .action-btn, .action-icon-btn, .add-trip-overlay').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    if (btn.tagName === 'BUTTON' || btn.classList.contains('action-btn')) {
+                        // Small ripple or scale effect could go here
+                        console.log('Button clicked:', btn.innerText || btn.ariaLabel);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

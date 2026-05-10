@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveloop - Discover Your Next Adventure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-container">
+        <div class="splash-content">
+            <div class="brand-text">travel<span class="brand-accent">oop</span></div>
+            <div class="splash-loader">
+                <div class="loader-progress"></div>
+            </div>
+            <p class="loader-text">Preparing your adventure...</p>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="flex items-center gap-2 group" style="text-decoration: none;">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+                        <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z" fill="currentColor" stroke="none" />
+                    </svg>
+                </div>
+                <span style="font-size: 1.25rem; font-weight: 800; color: #0f172a; letter-spacing: -0.025em;">travel<span style="color: #2563eb">oop</span></span>
+            </a>
+        </div>
+        
+        <div class="nav-right">
+
+            <a href="auth.html#login" class="login-link">Login</a>
+            <a href="auth.html#register" class="btn signup-btn">Sign Up</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-animation">
+            <svg class="hero-loop" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+                <path class="flight-path" d="M0,500 Q250,0 500,500 T1000,500" stroke="rgba(14, 165, 233, 0.2)" stroke-width="2" fill="none" />
+                <path class="flight-path" d="M0,300 Q250,800 500,300 T1000,300" stroke="rgba(14, 165, 233, 0.1)" stroke-width="1" fill="none" />
+            </svg>
+        </div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h1>The Future of <br> Travel Planning</h1>
+            <p>Experience seamless itineraries and smart collaborative tools. Everything you need for your next global adventure.</p>
+            <div class="hero-actions">
+                <a href="my-trips.html" class="btn btn-primary">Start Planning</a>
+                <a href="explore.html" class="btn btn-outline">Explore Cities</a>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <span>Scroll down</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+            </svg>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages-section">
+        <div class="packages-container">
+            <div class="packages-header">
+                <h2>Featured Packages</h2>
+                <p>Curated experiences from around the world.</p>
+            </div>
+            
+            <div class="packages-subheader">
+                <h3>Global Favorites</h3>
+                <div class="sort-dropdown">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 6h18M6 12h12m-9 6h6" />
+                    </svg>
+                    <span>Sort by: </span>
+                    <select>
+                        <option>Recommended</option>
+                        <option>Price: Low to High</option>
+                        <option>Trending</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="packages-grid">
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="pkg-image" style="background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=400&q=80')">
+                        <div class="pkg-price">₹85,000</div>
+                    </div>
+                    <div class="pkg-content">
+                        <div class="pkg-meta">
+                            <span class="pkg-tag">Culture</span>
+                            <div class="pkg-duration">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                                6 Days
+                            </div>
+                        </div>
+                        <h4 class="pkg-title">Paris & French Riviera</h4>
+                        <p class="pkg-slots">Only 4 slots remaining</p>
+                        <button class="pkg-btn">View Itinerary</button>
+                    </div>
+                </div>
+
+                <!-- Package 2 -->
+                <div class="package-card">
+                    <div class="pkg-image" style="background-image: url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400&q=80')">
+                        <div class="pkg-price">₹1,20,000</div>
+                    </div>
+                    <div class="pkg-content">
+                        <div class="pkg-meta">
+                            <span class="pkg-tag">Tradition</span>
+                            <div class="pkg-duration">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                                10 Days
+                            </div>
+                        </div>
+                        <h4 class="pkg-title">Kyoto Autumn Escape</h4>
+                        <p class="pkg-slots">Only 2 slots remaining</p>
+                        <button class="pkg-btn">View Itinerary</button>
+                    </div>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="package-card">
+                    <div class="pkg-image" style="background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&q=80')">
+                        <div class="pkg-price">₹45,000</div>
+                    </div>
+                    <div class="pkg-content">
+                        <div class="pkg-meta">
+                            <span class="pkg-tag">Tropical</span>
+                            <div class="pkg-duration">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                                5 Days
+                            </div>
+                        </div>
+                        <h4 class="pkg-title">Bali Beach Paradise</h4>
+                        <p class="pkg-slots">Limited availability</p>
+                        <button class="pkg-btn">View Itinerary</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Splash Screen Logic
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash-container');
+                splash.classList.add('fade-out');
+            }, 3000);
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
