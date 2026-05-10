@@ -1,0 +1,151 @@
+/* Auth Wrapper & Background */
+.auth-wrapper {
+    min-height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-image: url('https://images.unsplash.com/photo-1470509037663-253afd7f0f51?auto=format&fit=crop&w=1920&q=80'); /* Sunflower sunset field */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Subtle overlay to make text more readable */
+.auth-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 0;
+}
+
+/* Glass Card */
+.glass-card {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: 40px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.glass-card.hidden {
+    display: none;
+}
+
+.glass-card h2 {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 32px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Form Layout */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .input-group {
+    flex: 1;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(240, 244, 248, 0.95);
+    color: #111827;
+    font-size: 14px;
+    font-family: inherit;
+    transition: box-shadow 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.5);
+}
+
+.input-group input::placeholder {
+    color: #6b7280;
+}
+
+/* Submit Button */
+.auth-submit {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.85);
+    color: #111827;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    backdrop-filter: blur(4px);
+}
+
+.auth-submit:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.auth-submit:active {
+    transform: translateY(0);
+}
+
+/* Footer Links */
+.auth-footer {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.auth-footer a {
+    color: #ffffff;
+    font-weight: 700;
+    margin-left: 4px;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .glass-card {
+        padding: 30px 20px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
